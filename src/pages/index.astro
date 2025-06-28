@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
 ---
 
 <!doctype html>
@@ -13,38 +13,236 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<div class="hero-content">
+					<h1>Toni Bailey by the Sea</h1>
+					<p class="tagline">Fine Art Inspired by the Oregon Coast</p>
+					<div class="cta-buttons">
+						<a href="/gallery" class="btn primary">View Gallery</a>
+						<a href="/contact" class="btn secondary">Contact Artist</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="featured-work">
+				<h2>Featured Artwork</h2>
+				<div class="gallery-preview">
+					<!-- Placeholder for featured artwork images -->
+					<div class="art-piece">
+						<div class="art-placeholder">Image 1</div>
+						<h3>Pacific Sunset</h3>
+						<p>Oil on canvas, 24" × 36"</p>
+					</div>
+					<div class="art-piece">
+						<div class="art-placeholder">Image 2</div>
+						<h3>Coastal Reflections</h3>
+						<p>Acrylic on panel, 18" × 24"</p>
+					</div>
+					<div class="art-piece">
+						<div class="art-placeholder">Image 3</div>
+						<h3>Misty Harbor</h3>
+						<p>Watercolor, 16" × 20"</p>
+					</div>
+				</div>
+				<div class="view-more">
+					<a href="/gallery" class="btn secondary">View Full Gallery</a>
+				</div>
+			</section>
+
+			<section class="about-preview">
+				<div class="about-content">
+					<h2>About the Artist</h2>
+					<p>
+						Toni Bailey is an Oregon Coast artist whose work captures the raw beauty and serene power 
+						of the Pacific Northwest. Drawing inspiration from the ever-changing coastal landscapes, 
+						Toni's art reflects both the tranquility and drama of life by the sea.
+					</p>
+					<a href="/about" class="text-link">Read More About Toni →</a>
+				</div>
+				<div class="artist-image">
+					<div class="image-placeholder">Artist Photo</div>
+				</div>
+			</section>
+
+			<section class="events">
+				<h2>Upcoming Events</h2>
+				<div class="event-list">
+					<div class="event">
+						<div class="event-date">July 15-17, 2025</div>
+						<h3>Summer Art Walk</h3>
+						<p>Join Toni at the annual Newport Summer Art Walk featuring local artists.</p>
+					</div>
+					<div class="event">
+						<div class="event-date">August 5, 2025</div>
+						<h3>Gallery Opening</h3>
+						<p>New collection debut at the Coastal Arts Center in Lincoln City.</p>
+					</div>
+				</div>
+			</section>
 		</main>
+		
+		<style>
+			main {
+				max-width: 100%;
+				padding: 0;
+			}
+			
+			section {
+				padding: 3rem 1rem;
+			}
+			
+			.hero {
+				background-color: #1a3a4a;
+				color: white;
+				text-align: center;
+				padding: 6rem 1rem;
+			}
+			
+			.hero h1 {
+				font-size: 3rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.tagline {
+				font-size: 1.5rem;
+				margin-bottom: 2rem;
+				font-weight: 300;
+			}
+			
+			.cta-buttons {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+			
+			.btn {
+				display: inline-block;
+				padding: 0.8rem 1.5rem;
+				border-radius: 4px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s ease;
+			}
+			
+			.primary {
+				background-color: #3b82f6;
+				color: white;
+			}
+			
+			.primary:hover {
+				background-color: #2563eb;
+			}
+			
+			.secondary {
+				background-color: transparent;
+				color: white;
+				border: 2px solid white;
+			}
+			
+			.secondary:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+			
+			.featured-work, .events {
+				max-width: 1200px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			
+			.gallery-preview {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin: 2rem 0;
+			}
+			
+			.art-piece {
+				text-align: left;
+			}
+			
+			.art-placeholder {
+				background-color: #e5e7eb;
+				height: 250px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #6b7280;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+			
+			.about-preview {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+				max-width: 1200px;
+				margin: 0 auto;
+				align-items: center;
+				background-color: #f8f9fa;
+			}
+			
+			.about-content {
+				text-align: left;
+			}
+			
+			.image-placeholder {
+				background-color: #e5e7eb;
+				height: 400px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #6b7280;
+				font-weight: 500;
+			}
+			
+			.text-link {
+				color: #3b82f6;
+				text-decoration: none;
+				font-weight: 600;
+			}
+			
+			.text-link:hover {
+				text-decoration: underline;
+			}
+			
+			.event-list {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin: 2rem 0;
+				text-align: left;
+			}
+			
+			.event-date {
+				color: #3b82f6;
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+			}
+			
+			.view-more {
+				margin-top: 2rem;
+			}
+			
+			.view-more .secondary {
+				color: #1a3a4a;
+				border-color: #1a3a4a;
+			}
+			
+			.view-more .secondary:hover {
+				background-color: rgba(26, 58, 74, 0.1);
+			}
+			
+			@media (max-width: 768px) {
+				.about-preview {
+					grid-template-columns: 1fr;
+				}
+				
+				.artist-image {
+					order: -1;
+				}
+			}
+		</style>
 		<Footer />
 	</body>
 </html>
